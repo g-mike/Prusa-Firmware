@@ -19,7 +19,7 @@
 #define DEVELOPER
 
 // Printer name
-#define CUSTOM_MENDEL_NAME "Prusa i3 MK3S"
+#define CUSTOM_MENDEL_NAME "Replicator"
 
 // Electronics
 #define MOTHERBOARD BOARD_EINSY_1_0a
@@ -65,9 +65,9 @@
 #define MANUAL_Z_HOME_POS 0.2
 
 // Travel limits after homing
-#define X_MAX_POS 255
+#define X_MAX_POS 250
 #define X_MIN_POS 0
-#define Y_MAX_POS 212.5
+#define Y_MAX_POS 205
 #define Y_MIN_POS -4 //orig -4
 #define Z_MAX_POS 210
 #define Z_MIN_POS 0.15
@@ -318,7 +318,7 @@
 #endif
 #define SUPERPINDA_SUPPORT
 #define PINDA_MINTEMP 10
-//#define PINDA_TEMP_COMP //Used to enable SuperPINDA toggle menu/function
+#define PINDA_TEMP_COMP //Used to enable SuperPINDA toggle menu/function
 #define AMBIENT_MINTEMP -30
 
 // Maxtemps
@@ -675,7 +675,7 @@
 
 #define M600_TIMEOUT 600  //seconds
 
-//#define SUPPORT_VERBOSITY
+#define SUPPORT_VERBOSITY
 
 #define MMU_FILAMENT_COUNT 5
 
