@@ -59,7 +59,15 @@ void setExtruderAutoFanState(uint8_t state)
 void countFanSpeed()
 {
     //SERIAL_ECHOPGM("edge counter 1:"); MYSERIAL.println(fan_edge_counter[1]);
-    fan_speed[0] = (fan_edge_counter[0] * (float(250) / (_millis() - extruder_autofan_last_check)));
+    
+	/* HOTEND FAN 2 vs 3 wire RPM counting */
+	// Enable if hotend fan signals rpm (2 wire fan)
+	//fan_speed[0] = (fan_edge_counter[0] * (float(250) / (_millis() - extruder_autofan_last_check)));
+	//
+	// Use if hotend fan does not signal RPM (2 wire fan)
+	// Value above 100 should not trigger fan failure
+	fan_speed[0] = 255;
+	
     fan_speed[1] = (fan_edge_counter[1] * (float(250) / (_millis() - extruder_autofan_last_check)));
     /*SERIAL_ECHOPGM("time interval: "); MYSERIAL.println(_millis() - extruder_autofan_last_check);
     SERIAL_ECHOPGM("hotend fan speed:"); MYSERIAL.print(fan_speed[0]); SERIAL_ECHOPGM("; edge counter:"); MYSERIAL.println(fan_edge_counter[0]);
